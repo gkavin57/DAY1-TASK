@@ -1,0 +1,64 @@
+
+1.Write a blog on Difference between HTTP1.1 vs HTTP2 
+  HTTP 
+    * HTTP stands for hypertext transfer protocol & it is used in client-server communication. 
+    * By using HTTP user sends the request to the server & the server sends the response to the user. 
+    * HTTP/1.1 which was created in 1997 & the new one is HTTP/2 which was created in 2015. 
+ 
+  HTTP1.1 
+    * For better understanding, let’s assume the situation when you make a request to the server for the UTUBE. 
+    * html page & server responds to you as a resource UTUBE.html page.  
+    * Before sending the request and the response there is a TCP connection established between client & server.  
+    * Again you make a request to the server for image img.jpg & the server gives a response as an image img.jpg.  
+    * The connection was not lost here after the first request because we add a keep-alive header which is the part of the request so there is an open connection between the server & client. 
+    * There is a persistent connection which means several requests & responses are merged in a single connection.  
+    * These are the drawbacks that lead to the creation of HTTP/2: The first problem is HTTP/1.1 transfer all the requests & responses in the plain text message form.  
+    * The second one is head of line blocking in which TCP connection is blocked all other requests until the response does not receive.  
+    * All the information related to the header file is repeated in every request. 
+ 
+  HTTP2 
+    * HTTP/2 was developed over the SPDY protocol. 
+    * HTTP/2 works on the binary framing layer instead of textual that converts all the messages in binary format.  
+    * It works on fully multiplexed that is one TCP connection is used for multiple requests.  
+    * HTTP/2 uses HPACK which is used to split data from header. it compresses the header. 
+    * The server sends all the other files like CSS & JS without the request of the client using the PUSH frame.  
+
+ 
+  MAJOR DIFFERENCE 
+   HTTP/1.1  
+    *Ithe usest works on the textual format.  
+    *There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources. 
+    *It uses requests resource Inlining for use getting multiple pages 
+    *It compresses data by itself. 
+ 
+   HTTP/2 
+    *It works on the binary protocol. 
+    *It allows multiplexing so one TCP connection is required for multiple requests.
+    *It uses PUSH frame by server that collects all multiple pages  
+    *It uses HPACK for data compression.
+ 
+  
+2.Write a blog about objects and its internal representation in Javascript  
+    *Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. 
+    *These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).
+    *Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+    *An object, is a reference data type. 
+    *Variables that are assigned a reference value are given a reference or a pointer to that value.  
+    *That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value. 
+    *Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs.  
+    *These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+    *An object can be created with figure brackets {…} with an optional list of properties. 
+    *A property is a “key: value” pair, where a key is a string (also called a “property name”), and value can be anything.
+
+  To understand this rather abstract definition, let us look at an example of a JavaScript Object :
+
+    let school = {  
+    name : “Vivekananda School”,
+    location : “Delhi”,
+    established : “1971”
+    }
+    In the above example “name”, “location”, “established” are all “keys” and “Vivekananda School”, “Delhi” and 1971 are values of these keys respectively.
+
+    Each of these keys is referred to as properties of the object.  
+    An object in JavaScript may also have a function as a member, in which case it will be known as a method of that object 
+
